@@ -30,7 +30,7 @@
             line-height: 1.6;
         }
 
-        /* --- FIXED NAVIGATION --- */
+        /* --- NAVIGATION --- */
         header {
             position: fixed;
             width: 100%;
@@ -50,17 +50,7 @@
             padding: 12px 25px;
         }
 
-        .logo-box {
-            display: flex;
-            align-items: center;
-            text-decoration: none;
-        }
-
-        .logo-box img {
-            height: 55px; /* Increased slightly since text is gone */
-            width: auto;
-            display: block;
-        }
+        .logo-box img { height: 55px; width: auto; display: block; }
 
         nav { display: flex; align-items: center; }
 
@@ -75,11 +65,11 @@
 
         nav a:hover { color: var(--accent); }
 
-        /* --- HERO SECTION --- */
+        /* --- HERO --- */
         .hero {
             max-width: 1200px;
             margin: auto;
-            padding: 160px 25px 80px;
+            padding: 180px 25px 100px;
             display: grid;
             grid-template-columns: 1.2fr 1fr;
             gap: 50px;
@@ -100,21 +90,17 @@
 
         .hero h1 {
             font-family: 'Playfair Display', serif;
-            font-size: clamp(38px, 5vw, 64px);
+            font-size: clamp(40px, 5vw, 68px);
             line-height: 1.1;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
         }
 
-        .hero p {
-            font-size: 18px;
-            color: var(--slate);
-            margin-bottom: 35px;
-        }
+        .hero p { font-size: 19px; color: var(--slate); margin-bottom: 40px; }
 
         .btn-group { display: flex; gap: 15px; }
 
         .btn {
-            padding: 16px 30px;
+            padding: 18px 34px;
             border-radius: 12px;
             text-decoration: none;
             font-weight: 700;
@@ -123,110 +109,100 @@
         }
 
         .btn-dark { background: var(--dark); color: white; }
-        .btn-dark:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
+        .btn-dark:hover { transform: translateY(-3px); box-shadow: 0 15px 30px rgba(15,23,42,0.2); }
 
-        .hero-img img {
-            width: 100%;
-            border-radius: 24px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-        }
+        .hero-img img { width: 100%; border-radius: 30px; box-shadow: 0 30px 60px rgba(0,0,0,0.12); }
 
-        /* --- SERVICES --- */
-        .section-padding { padding: 100px 25px; max-width: 1200px; margin: auto; }
-        .center-title { text-align: center; margin-bottom: 60px; }
-
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
-        }
-
-        .card {
-            background: white;
-            padding: 40px;
-            border-radius: 20px;
-            border: 1px solid #edf2f7;
-            transition: 0.3s;
-        }
-
-        .card:hover { border-color: var(--accent); transform: translateY(-5px); }
-
-        /* --- JOBS --- */
-        .jobs-dark {
+        /* --- NEW: IMPACT SECTION (Replaces Form) --- */
+        .impact-section {
             background: var(--dark);
             color: white;
-            padding: 80px 40px;
-            border-radius: 40px;
-            margin: 20px;
+            padding: 100px 25px;
+            text-align: center;
+            border-radius: 60px;
+            margin: 40px 20px;
         }
 
-        .job-item {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 25px 0;
-            border-bottom: 1px solid rgba(255,255,255,0.1);
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            max-width: 1100px;
+            margin: 60px auto 0;
         }
 
-        /* --- FOOTER --- */
-        footer {
-            background: #fff;
-            padding: 80px 25px 40px;
-            border-top: 1px solid #eee;
-        }
+        .stat-card h2 { font-size: 48px; color: var(--accent); margin-bottom: 10px; font-family: 'Playfair Display', serif; }
+        .stat-card p { font-size: 14px; text-transform: uppercase; letter-spacing: 2px; opacity: 0.7; }
 
-        .footer-grid {
+        /* --- NEW: WHY CHOOSE US (Replaces Form) --- */
+        .why-us {
             max-width: 1200px;
             margin: auto;
+            padding: 100px 25px;
             display: grid;
-            grid-template-columns: 1.5fr 1fr 1.5fr;
-            gap: 60px;
-        }
-
-        .footer-logo { margin-bottom: 20px; }
-        .footer-logo img { height: 60px; width: auto; }
-        
-        .footer-col h4 { margin-bottom: 25px; font-size: 14px; text-transform: uppercase; letter-spacing: 1px; }
-        
-        .contact-link {
-            display: flex;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
             align-items: center;
-            gap: 12px;
-            text-decoration: none;
-            color: var(--slate);
-            margin-bottom: 15px;
-            transition: 0.2s;
         }
 
-        .contact-link i {
-            color: var(--accent);
-            width: 20px;
-            font-size: 18px;
-            text-align: center;
+        .why-us-content h2 { font-size: 42px; font-family: 'Playfair Display', serif; margin-bottom: 20px; }
+        
+        .feature-item {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 30px;
         }
 
-        .contact-link:hover { color: var(--dark); }
-
-        .whatsapp-btn {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            background: #25D366;
-            width: 60px; height: 60px;
-            border-radius: 50%;
+        .feature-icon {
+            background: var(--white);
+            width: 50px; height: 50px;
+            border-radius: 12px;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: white;
-            font-size: 30px;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-            z-index: 1000;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+            color: var(--accent);
+            flex-shrink: 0;
         }
 
+        .why-us-img img {
+            width: 100%;
+            border-radius: 24px;
+            box-shadow: 20px 20px 0px var(--accent-soft);
+        }
+
+        /* --- SERVICES & JOBS --- */
+        .section-padding { padding: 100px 25px; max-width: 1200px; margin: auto; }
+        .center-title { text-align: center; margin-bottom: 60px; }
+
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
+
+        .card {
+            background: white;
+            padding: 45px;
+            border-radius: 24px;
+            border: 1px solid #edf2f7;
+            transition: 0.4s;
+        }
+
+        .card:hover { border-color: var(--accent); transform: translateY(-10px); box-shadow: 0 20px 40px rgba(0,0,0,0.05); }
+
+        .jobs-container { background: #f1f5f9; padding: 80px 40px; border-radius: 40px; margin: 20px; }
+        .job-item { display: flex; justify-content: space-between; align-items: center; padding: 25px 0; border-bottom: 1px solid rgba(0,0,0,0.05); }
+
+        /* --- FOOTER --- */
+        footer { background: #fff; padding: 100px 25px 40px; border-top: 1px solid #eee; }
+        .footer-grid { max-width: 1200px; margin: auto; display: grid; grid-template-columns: 1.5fr 1fr 1.5fr; gap: 60px; }
+        .footer-logo img { height: 60px; width: auto; margin-bottom: 20px; }
+        .contact-link { display: flex; align-items: center; gap: 12px; text-decoration: none; color: var(--slate); margin-bottom: 15px; }
+        .contact-link i { color: var(--accent); width: 20px; text-align: center; }
+
+        .whatsapp-btn { position: fixed; bottom: 30px; right: 30px; background: #25D366; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 30px; z-index: 1000; box-shadow: 0 10px 20px rgba(37,211,102,0.3); }
+
         @media (max-width: 850px) {
-            .hero { grid-template-columns: 1fr; text-align: center; padding-top: 120px; }
+            .hero, .why-us { grid-template-columns: 1fr; text-align: center; }
             .btn-group { justify-content: center; }
-            .footer-grid { grid-template-columns: 1fr; gap: 40px; }
+            .footer-grid { grid-template-columns: 1fr; }
             nav { display: none; }
         }
     </style>
@@ -236,14 +212,12 @@
 
 <header>
     <div class="nav-container">
-        <a href="#" class="logo-box">
-            <img src="logo.png" alt="Sunrise Logo">
-        </a>
+        <a href="#" class="logo-box"><img src="logo.png" alt="Sunrise Logo"></a>
         <nav>
             <a href="#">Home</a>
             <a href="#services">Services</a>
-            <a href="#jobs">Jobs</a>
-            <a href="#contact" class="btn btn-dark" style="padding: 10px 20px; margin-left: 20px; font-size: 13px;">Contact</a>
+            <a href="#jobs">Careers</a>
+            <a href="https://forms.gle/i6zmoPvZLHGTANzr7" class="btn btn-dark" style="padding: 10px 24px; margin-left: 20px; font-size: 13px;">Apply Now</a>
         </nav>
     </div>
 </header>
@@ -251,93 +225,138 @@
 <section class="hero">
     <div class="hero-content" data-aos="fade-right">
         <span class="badge">GLOBAL RECRUITMENT PARTNER</span>
-        <h1>Building High-Performing <span style="color:var(--accent)">Teams.</span></h1>
-        <p>Premium talent solutions for UAE, UK, USA, and India. We connect industry leaders with exceptional professionals.</p>
+        <h1>Elevating Teams Beyond <span style="color:var(--accent)">Borders.</span></h1>
+        <p>Your strategic ally in high-stakes talent acquisition. Specialized in UAE, UK, USA, and Pan-India markets.</p>
         <div class="btn-group">
             <a href="https://forms.gle/i6zmoPvZLHGTANzr7" class="btn btn-dark">Hire Talent</a>
-            <a href="https://forms.gle/i6zmoPvZLHGTANzr7" class="btn" style="border: 1px solid #ddd;">Submit CV</a>
+            <a href="#jobs" class="btn" style="border: 1px solid #ddd;">Browse Roles</a>
         </div>
     </div>
     <div class="hero-img" data-aos="fade-left">
-        <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800" alt="Consultancy">
+        <img src="https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1000" alt="Success">
     </div>
 </section>
 
 <section id="services" class="section-padding">
     <div class="center-title">
-        <span class="badge">SPECIALIZATIONS</span>
-        <h2 style="font-size: 36px; margin-top: 10px;">Our Expertise</h2>
+        <span class="badge">OUR SPECIALTIES</span>
+        <h2 style="font-size: 42px; margin-top: 10px; font-family: 'Playfair Display', serif;">How We Help You Grow</h2>
     </div>
     <div class="services-grid">
         <div class="card" data-aos="fade-up">
-            <h3>Executive Search</h3>
-            <p>Direct headhunting for leadership roles and specialized technical positions.</p>
+            <i class="fa-solid fa-earth-americas" style="font-size: 30px; color: var(--accent); margin-bottom: 20px;"></i>
+            <h3>Global Logistics</h3>
+            <p>End-to-end management of international placements, compliance, and visa coordination.</p>
         </div>
         <div class="card" data-aos="fade-up" data-aos-delay="100">
-            <h3>Global Mobility</h3>
-            <p>Seamless international hiring support for UAE, UK, and USA markets.</p>
+            <i class="fa-solid fa-crown" style="font-size: 30px; color: var(--accent); margin-bottom: 20px;"></i>
+            <h3>Executive Search</h3>
+            <p>Identifying visionary leaders for C-Suite and senior management positions globally.</p>
         </div>
         <div class="card" data-aos="fade-up" data-aos-delay="200">
-            <h3>HR Solutions</h3>
-            <p>Comprehensive manpower planning and outsourced staffing services.</p>
+            <i class="fa-solid fa-users-gear" style="font-size: 30px; color: var(--accent); margin-bottom: 20px;"></i>
+            <h3>Staffing Solutions</h3>
+            <p>Agile manpower solutions tailored for Finance, IT, and Corporate operations.</p>
         </div>
     </div>
 </section>
 
-<section id="jobs" class="jobs-dark" data-aos="zoom-in">
-    <h2 style="margin-bottom: 40px; font-size: 32px;">Open Mandates</h2>
-    <div class="job-item">
-        <div>
-            <h4>US Accounting & Taxation</h4>
-            <p style="opacity: 0.6; font-size: 14px;">3+ Years Experience • International Client</p>
+<section class="impact-section" data-aos="zoom-in">
+    <span class="badge" style="color: white; border: 1px solid rgba(255,255,255,0.3); background: transparent;">TRACK RECORD</span>
+    <h2 style="font-size: 40px; margin-top: 20px; font-family: 'Playfair Display', serif;">Our Global Presence</h2>
+    <div class="stats-grid">
+        <div class="stat-card">
+            <h2>500+</h2>
+            <p>Successful Placements</p>
         </div>
-        <a href="https://forms.gle/i6zmoPvZLHGTANzr7" class="btn btn-dark" style="background: var(--accent); font-size: 12px; padding: 10px 20px;">Apply</a>
-    </div>
-    <div class="job-item">
-        <div>
-            <h4>Corporate Accountant</h4>
-            <p style="opacity: 0.6; font-size: 14px;">2+ Years Experience • Local & Remote</p>
+        <div class="stat-card">
+            <h2>12+</h2>
+            <p>Countries Served</p>
         </div>
-        <a href="https://forms.gle/i6zmoPvZLHGTANzr7" class="btn btn-dark" style="background: var(--accent); font-size: 12px; padding: 10px 20px;">Apply</a>
+        <div class="stat-card">
+            <h2>98%</h2>
+            <p>Client Retention</p>
+        </div>
+        <div class="stat-card">
+            <h2>24/7</h2>
+            <p>Expert Support</p>
+        </div>
     </div>
 </section>
 
-<section class="section-padding">
+<section class="why-us">
+    <div class="why-us-img" data-aos="fade-right">
+        <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1000" alt="Strategy">
+    </div>
+    <div class="why-us-content" data-aos="fade-left">
+        <span class="badge">WHY SUNRISE</span>
+        <h2>A Strategic Approach to Talent</h2>
+        
+        <div class="feature-item">
+            <div class="feature-icon"><i class="fa-solid fa-check"></i></div>
+            <div>
+                <h4>Vetted Global Network</h4>
+                <p style="color: var(--slate); font-size: 14px;">Direct access to top-tier professionals in UAE, UK, and USA.</p>
+            </div>
+        </div>
+
+        <div class="feature-item">
+            <div class="feature-icon"><i class="fa-solid fa-bolt"></i></div>
+            <div>
+                <h4>Rapid Turnaround</h4>
+                <p style="color: var(--slate); font-size: 14px;">We reduce your "Time-to-Hire" by 40% through intelligent sourcing.</p>
+            </div>
+        </div>
+
+        <div class="feature-item" style="margin-bottom: 0;">
+            <div class="feature-icon"><i class="fa-solid fa-shield-halved"></i></div>
+            <div>
+                <h4>Risk Management</h4>
+                <p style="color: var(--slate); font-size: 14px;">Ensuring 100% compliance with international labor laws.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="jobs" class="section-padding">
     <div class="center-title">
-        <h2>Submit Your Details</h2>
+        <h2 style="font-size: 36px; font-family: 'Playfair Display', serif;">Featured Openings</h2>
     </div>
-    <div style="border-radius: 30px; overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.05);">
-        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdC78-KVHKo6jrD704b5clwaoNSMl7gMqixYjnPukhWjF39sQ/viewform?embedded=true" width="100%" height="800" frameborder="0">Loading…</iframe>
+    <div class="jobs-container">
+        <div class="job-item" data-aos="fade-up">
+            <div>
+                <h4 style="font-size: 18px;">US Accounting & Taxation</h4>
+                <p style="color: var(--slate); font-size: 14px;">3+ Years Experience • International Client</p>
+            </div>
+            <a href="https://forms.gle/i6zmoPvZLHGTANzr7" class="btn btn-dark" style="background: var(--accent); padding: 12px 25px;">Apply Now</a>
+        </div>
+        <div class="job-item" data-aos="fade-up" data-aos-delay="100">
+            <div>
+                <h4 style="font-size: 18px;">Corporate Accountant</h4>
+                <p style="color: var(--slate); font-size: 14px;">2+ Years Experience • Local & Remote</p>
+            </div>
+            <a href="https://forms.gle/i6zmoPvZLHGTANzr7" class="btn btn-dark" style="background: var(--accent); padding: 12px 25px;">Apply Now</a>
+        </div>
     </div>
 </section>
 
 <footer id="contact">
     <div class="footer-grid">
         <div class="footer-col">
-            <div class="footer-logo">
-                <img src="logo.png" alt="Sunrise Logo">
-            </div>
-            <p style="font-size: 14px; color: var(--slate);">Your trusted partner in global talent acquisition.</p>
+            <div class="footer-logo"><img src="logo.png" alt="Sunrise Logo"></div>
+            <p style="font-size: 14px; color: var(--slate);">Your strategic partner in global talent acquisition across borders.</p>
         </div>
-        
         <div class="footer-col">
             <h4>Sitemap</h4>
             <a href="#" class="contact-link" style="padding-left: 0;">Home</a>
             <a href="#services" class="contact-link" style="padding-left: 0;">Services</a>
             <a href="#jobs" class="contact-link" style="padding-left: 0;">Careers</a>
         </div>
-
         <div class="footer-col">
             <h4>Contact Details</h4>
-            <a href="tel:+919638039035" class="contact-link">
-                <i class="fa-solid fa-phone"></i> +91 9638039035
-            </a>
-            <a href="mailto:sunriseconsultancy.hr@gmail.com" class="contact-link">
-                <i class="fa-solid fa-envelope"></i> sunriseconsultancy.hr@gmail.com
-            </a>
-            <a href="https://www.linkedin.com/company/sunrise-consultancy-0811/" target="_blank" class="contact-link">
-                <i class="fa-brands fa-linkedin"></i> LinkedIn Profile
-            </a>
+            <a href="tel:+919638039035" class="contact-link"><i class="fa-solid fa-phone"></i> +91 9638039035</a>
+            <a href="mailto:sunriseconsultancy.hr@gmail.com" class="contact-link"><i class="fa-solid fa-envelope"></i> sunriseconsultancy.hr@gmail.com</a>
+            <a href="https://www.linkedin.com/company/sunrise-consultancy-0811/" target="_blank" class="contact-link"><i class="fa-brands fa-linkedin"></i> LinkedIn Profile</a>
         </div>
     </div>
     <div style="text-align: center; margin-top: 60px; padding-top: 30px; border-top: 1px solid #eee; font-size: 12px; color: #999;">
@@ -345,9 +364,7 @@
     </div>
 </footer>
 
-<a href="https://wa.me/919638039035" class="whatsapp-btn" target="_blank">
-    <i class="fa-brands fa-whatsapp"></i>
-</a>
+<a href="https://wa.me/919638039035" class="whatsapp-btn" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
 <script>

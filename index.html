@@ -51,7 +51,7 @@
             padding: 12px 25px;
         }
 
-        .logo-box img { height: 55px; width: auto; display: block; }
+        .logo-box img { height: 50px; width: auto; display: block; }
         nav { display: flex; align-items: center; }
         nav a {
             text-decoration: none;
@@ -63,8 +63,7 @@
         }
         nav a:hover { color: var(--accent); }
 
-        /* --- UI COMPONENTS --- */
-        .section-padding { padding: 100px 5%; max-width: 1300px; margin: auto; }
+        .section-padding { padding: 80px 5%; max-width: 1300px; margin: auto; }
         
         .badge {
             background: var(--accent-soft);
@@ -73,76 +72,51 @@
             border-radius: 100px;
             font-size: 11px;
             font-weight: 800;
-            letter-spacing: 1px;
+            text-transform: uppercase;
             display: inline-block;
             margin-bottom: 20px;
-            text-transform: uppercase;
         }
 
         .title-serif {
             font-family: 'Playfair Display', serif;
             font-size: clamp(32px, 5vw, 48px);
             margin-bottom: 25px;
-            line-height: 1.2;
         }
 
         .btn {
-            padding: 18px 34px;
+            padding: 16px 30px;
             border-radius: 12px;
             text-decoration: none;
             font-weight: 700;
             display: inline-block;
-            transition: 0.3s cubic-bezier(0.2, 1, 0.3, 1);
+            transition: 0.3s;
         }
         .btn-dark { background: var(--dark); color: white; }
-        .btn-dark:hover { transform: translateY(-3px); box-shadow: 0 15px 30px rgba(15,23,42,0.2); }
-
-        /* --- HERO --- */
-        .hero {
-            max-width: 1200px;
-            margin: auto;
-            padding: 180px 25px 100px;
-            display: grid;
-            grid-template-columns: 1.2fr 1fr;
-            gap: 50px;
-            align-items: center;
-        }
-        .hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(40px, 5vw, 68px); line-height: 1.1; margin-bottom: 25px; }
-        .hero p { font-size: 19px; color: var(--slate); margin-bottom: 40px; }
-        .hero-img img { width: 100%; border-radius: 30px; box-shadow: 0 30px 60px rgba(0,0,0,0.12); }
-
-        /* --- INDUSTRY GRID --- */
-        .industry-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 25px; margin-top: 50px; }
-        .industry-card { background: var(--white); padding: 40px; border-radius: 24px; border: 1px solid rgba(0,0,0,0.03); transition: 0.4s; }
-        .industry-card:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(15, 23, 42, 0.08); border-color: var(--accent); }
-        .industry-card i { font-size: 32px; color: var(--accent); margin-bottom: 20px; display: block; }
-        .industry-card h3 { font-size: 22px; margin-bottom: 10px; }
-        .industry-card .sub-roles { font-size: 12px; font-weight: 800; color: var(--slate); text-transform: uppercase; display: block; margin-bottom: 15px; letter-spacing: 0.5px; }
 
         /* --- REVIEWS --- */
-        .reviews-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 50px; }
-        .review-card { background: var(--white); padding: 35px; border-radius: 24px; border: 1px solid rgba(0,0,0,0.05); position: relative; }
-        .stars { color: #FFB800; margin-bottom: 15px; font-size: 14px; }
-        .review-text { font-size: 15px; color: var(--slate); font-style: italic; margin-bottom: 20px; }
-        .google-icon { position: absolute; top: 35px; right: 35px; color: #4285F4; font-size: 20px; opacity: 0.2; }
+        .reviews-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 40px; }
+        .review-card { background: white; padding: 30px; border-radius: 20px; border: 1px solid #f1f5f9; position: relative; transition: 0.3s; }
+        .review-card:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
+        .stars { color: #FFB800; margin-bottom: 10px; font-size: 14px; }
+        .google-icon { position: absolute; top: 30px; right: 30px; color: #4285F4; opacity: 0.2; font-size: 20px; }
 
-        /* --- MAP SECTION --- */
-        .map-container { width: 100%; border-radius: 30px; overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.08); border: 1px solid #eee; }
-        .map-container iframe { width: 100% !important; height: 450px; border: 0; }
+        /* --- MAP --- */
+        .map-wrapper { 
+            width: 100%; 
+            border-radius: 24px; 
+            overflow: hidden; 
+            box-shadow: 0 20px 40px rgba(0,0,0,0.06);
+            height: 450px;
+            margin-top: 30px;
+        }
+        .map-wrapper iframe { width: 100%; height: 100%; border: 0; }
 
-        /* --- FOOTER --- */
-        footer { background: #fff; padding: 100px 5% 40px; border-top: 1px solid #eee; }
-        .footer-grid { max-width: 1200px; margin: auto; display: grid; grid-template-columns: 1fr 1fr 1.5fr; gap: 60px; }
-        .contact-link { display: flex; align-items: flex-start; gap: 12px; text-decoration: none; color: var(--slate); margin-bottom: 15px; font-size: 14px; }
-        .contact-link i { color: var(--accent); width: 20px; text-align: center; margin-top: 4px; }
-
+        footer { background: #fff; padding: 80px 5% 40px; border-top: 1px solid #eee; }
+        .footer-grid { max-width: 1200px; margin: auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; }
+        
         .whatsapp-btn { position: fixed; bottom: 30px; right: 30px; background: #25D366; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 30px; z-index: 1000; box-shadow: 0 10px 20px rgba(37,211,102,0.3); }
 
-        @media (max-width: 850px) {
-            .hero { grid-template-columns: 1fr; text-align: center; }
-            .footer-grid { grid-template-columns: 1fr; gap: 40px; }
-            nav { display: none; }
-        }
+        @media (max-width: 768px) { nav { display: none; } }
     </style>
 </head>
 
@@ -154,140 +128,74 @@
         <nav>
             <a href="#">Home</a>
             <a href="#expertise">Expertise</a>
-            <a href="#jobs">Careers</a>
             <a href="#reviews">Reviews</a>
             <a href="#contact">Contact</a>
-            <a href="https://forms.gle/i6zmoPvZLHGTANzr7" class="btn btn-dark" style="padding: 10px 24px; margin-left: 20px; font-size: 13px;">Apply Now</a>
+            <a href="https://forms.gle/i6zmoPvZLHGTANzr7" class="btn btn-dark" style="padding: 10px 20px; margin-left: 20px; font-size: 13px;">Apply Now</a>
         </nav>
     </div>
 </header>
 
-<section class="hero">
-    <div class="hero-content" data-aos="fade-right">
-        <span class="badge">GLOBAL RECRUITMENT PARTNER</span>
-        <h1 class="title-serif">Elevating Teams Beyond <span style="color:var(--accent)">Borders.</span></h1>
-        <p>Your trusted partner in talent acquisition, helping you hire the right people with confidence.</p>
-        <div style="display: flex; gap: 15px;">
-            <a href="https://forms.gle/i6zmoPvZLHGTANzr7" class="btn btn-dark">Hire Talent</a>
-            <a href="#jobs" class="btn" style="border: 1px solid #ddd;">Browse Roles</a>
-        </div>
-    </div>
-    <div class="hero-img" data-aos="fade-left">
-        <img src="https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1000" alt="Success">
-    </div>
+<section class="section-padding" style="padding-top: 180px; text-align: center;">
+    <span class="badge" data-aos="fade-up">Global Recruitment Partner</span>
+    <h1 class="title-serif" data-aos="fade-up">Elevating Teams Beyond <span style="color:var(--accent)">Borders.</span></h1>
+    <p style="color: var(--slate); max-width: 700px; margin: auto; font-size: 18px;" data-aos="fade-up" data-aos-delay="100">
+        Trusted talent acquisition for Finance, Tech, and Engineering across India and International markets.
+    </p>
 </section>
 
-<section id="expertise" class="section-padding">
-    <div style="text-align: center;">
-        <span class="badge" data-aos="fade-up">Industry Expertise</span>
-        <h2 class="title-serif" data-aos="fade-up">Serving Specialized Sectors</h2>
-    </div>
-    <div class="industry-grid">
-        <div class="industry-card" data-aos="fade-up">
-            <i class="fa-solid fa-city"></i>
-            <h3>Construction & Real Estate</h3>
-            <span class="sub-roles">Engineers • Architects • Project Managers</span>
-            <p>Providing specialized staffing for large-scale infrastructure and residential projects.</p>
-        </div>
-        <div class="industry-card" data-aos="fade-up" data-aos-delay="100">
-            <i class="fa-solid fa-chart-line"></i>
-            <h3>Accounting & Finance</h3>
-            <span class="sub-roles">CA • Tax Experts • CFOs</span>
-            <p>Connecting businesses with financial experts for domestic and US-based accounting.</p>
-        </div>
-        <div class="industry-card" data-aos="fade-up" data-aos-delay="200">
-            <i class="fa-solid fa-laptop-code"></i>
-            <h3>Technology & IT</h3>
-            <span class="sub-roles">Software Engineers • Data Analysts</span>
-            <p>Building high-performing tech teams with specialized developers and IT managers.</p>
-        </div>
-    </div>
-</section>
-
-<section id="jobs" class="section-padding" style="background: #f1f5f9; border-radius: 60px; margin: 40px 20px;">
-    <div style="text-align: center;">
-        <span class="badge">Careers</span>
-        <h2 class="title-serif">Featured Openings</h2>
-    </div>
-    <div style="max-width: 900px; margin: 40px auto 0;">
-        <div style="display: flex; justify-content: space-between; align-items: center; padding: 25px; background: white; border-radius: 20px; margin-bottom: 20px; border: 1px solid #eee;">
-            <div>
-                <h4 style="font-size: 18px;">US Accounting & Taxation</h4>
-                <p style="color: var(--slate); font-size: 14px;">3+ Years Experience • International Client</p>
-            </div>
-            <a href="https://forms.gle/i6zmoPvZLHGTANzr7" class="btn btn-dark" style="background: var(--accent); padding: 12px 25px;">Apply Now</a>
-        </div>
-    </div>
-</section>
-
-<section id="reviews" class="section-padding">
+<section id="reviews" class="section-padding" style="background: #f8fafc; border-radius: 50px; margin: 0 20px;">
     <div style="text-align: center;">
         <span class="badge" data-aos="fade-up">Testimonials</span>
         <h2 class="title-serif" data-aos="fade-up">What Our Candidates Say</h2>
-        <p style="color: var(--slate); margin-bottom: 40px;">Rated 5.0 on Google Business Profile</p>
     </div>
     <div class="reviews-grid">
         <div class="review-card" data-aos="fade-up">
             <i class="fa-brands fa-google google-icon"></i>
             <div class="stars">★★★★★</div>
-            <p class="review-text">"Kudos to Sunrise Consultancy!! They are highly professional and passionate in what they do. They listen and understand what the client requires."</p>
+            <p style="font-style: italic; color: var(--slate); margin-bottom: 15px;">"Sunrise Consultancy is highly professional. They understand client requirements perfectly and work accordingly."</p>
             <strong>Mr. Amit</strong>
-            <p style="font-size: 12px; color: var(--accent);">VGYAN IT Services</p>
+            <p style="font-size: 12px; color: var(--accent); font-weight: 700;">VGYAN IT Services</p>
         </div>
         <div class="review-card" data-aos="fade-up" data-aos-delay="100">
             <i class="fa-brands fa-google google-icon"></i>
             <div class="stars">★★★★★</div>
-            <p class="review-text">"Sunrise is our extended team being always helpful, reachable and successful for top talent. Looking forward to a long term association."</p>
+            <p style="font-style: italic; color: var(--slate); margin-bottom: 15px;">"Excellent support for top talent. Helpful, reachable, and successful. Looking forward to a long-term association."</p>
             <strong>Mr. Chetan</strong>
-            <p style="font-size: 12px; color: var(--accent);">Si2 Technologies</p>
+            <p style="font-size: 12px; color: var(--accent); font-weight: 700;">Si2 Technologies</p>
         </div>
     </div>
-</section>
-
-<section id="location" class="section-padding" style="background: #fff; padding-top: 0;">
-    <div style="text-align: center; margin-bottom: 40px;">
-        <span class="badge">Our Headquarters</span>
-        <h2 class="title-serif">Visit Our Office</h2>
-    </div>
-    <div class="map-container" data-aos="zoom-in">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3671.803651490469!2d72.5688350750921!3d23.03098047916794!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395e85d4e53fc6d7%3A0x282840b846daab8d!2sSunrise%20Recruitment%20%26%20Consultancy!5e0!3m2!1sen!2sin!4v1775134120603!5m2!1sen!2sin" allowfullscreen="" loading="lazy"></iframe>
+    <div style="text-align: center; margin-top: 40px;">
+        <a href="https://www.google.com/search?q=Sunrise+Consultancy+Ahmedabad&lrd=0x395e848aba5bd449:0x4648293020521ad,1" target="_blank" style="text-decoration: none; color: var(--slate); font-weight: 600; font-size: 14px;">View all reviews on Google →</a>
     </div>
 </section>
 
-<footer id="contact">
+<section id="contact" class="section-padding">
+    <div style="text-align: center;">
+        <span class="badge" data-aos="fade-up">Find Us</span>
+        <h2 class="title-serif" data-aos="fade-up">Visit Our Office</h2>
+        <p style="color: var(--slate);">A 424, Sun Westbank, Ashram Road, Ahmedabad - 380009</p>
+    </div>
+    
+    <div class="map-wrapper" data-aos="zoom-in">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3671.879159987817!2d72.5684656758654!3d23.028172915938883!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395e848aba5bd449%3A0x4648293020521ad!2sSunrise%20Recruitment%20%26%20Consultancy!5e0!3m2!1sen!2sin!4v1711654321098!5m2!1sen!2sin" allowfullscreen="" loading="lazy"></iframe>
+    </div>
+</section>
+
+<footer>
     <div class="footer-grid">
-        <div class="footer-col">
-            <img src="logo.png" alt="Sunrise Logo" style="height: 60px; margin-bottom: 20px;">
-            <p style="font-size: 14px; color: var(--slate);">Your trusted partner in global talent acquisition, providing strategic staffing solutions across borders.</p>
+        <div>
+            <img src="logo.png" alt="Sunrise Logo" style="height: 50px; margin-bottom: 20px;">
+            <p style="font-size: 14px; color: var(--slate);">Your trusted partner in global talent acquisition.</p>
         </div>
-        <div class="footer-col">
+        <div>
             <h4 style="margin-bottom: 20px;">Quick Links</h4>
-            <a href="#" class="contact-link" style="padding-left: 0;">Home</a>
-            <a href="#expertise" class="contact-link" style="padding-left: 0;">Expertise</a>
-            <a href="#reviews" class="contact-link" style="padding-left: 0;">Reviews</a>
-            <a href="https://forms.gle/i6zmoPvZLHGTANzr7" class="contact-link" style="padding-left: 0;">Apply Now</a>
+            <p><a href="#expertise" style="text-decoration: none; color: var(--slate); font-size: 14px;">Expertise</a></p>
+            <p><a href="#reviews" style="text-decoration: none; color: var(--slate); font-size: 14px;">Reviews</a></p>
         </div>
-        <div class="footer-col">
-            <h4 style="margin-bottom: 20px;">Contact Details</h4>
-            <a href="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3671.803651490469!2d72.5688350750921!3d23.03098047916794!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395e85d4e53fc6d7%3A0x282840b846daab8d!2sSunrise%20Recruitment%20%26%20Consultancy!5e0!3m2!1sen!2sin!4v1775134120603!5m2!1sen!2sin" target="_blank" class="contact-link">
-                <i class="fa-solid fa-location-dot"></i>
-                <span>A 424, Sun Westbank, near vallabh sadan riverfront,<br>Ashram Road, Ahmedabad - 380009</span>
-            </a>
-            <a href="tel:+919638039035" class="contact-link"><i class="fa-solid fa-phone"></i> +91 9638039035</a>
-            <a href="mailto:sunriseconsultancy.hr@gmail.com" class="contact-link"><i class="fa-solid fa-envelope"></i> sunriseconsultancy.hr@gmail.com</a>
+        <div>
+            <h4 style="margin-bottom: 20px;">Contact</h4>
+            <p style="font-size: 14px; color: var(--slate);"><i class="fa-solid fa-phone" style="color: var(--accent); margin-right: 10px;"></i> +91 9638039035</p>
+            <p style="font-size: 14px; color: var(--slate); margin-top: 10px;"><i class="fa-solid fa-envelope" style="color: var(--accent); margin-right: 10px;"></i> sunriseconsultancy.hr@gmail.com</p>
         </div>
     </div>
-    <div style="text-align: center; margin-top: 60px; padding-top: 30px; border-top: 1px solid #eee; font-size: 12px; color: #999;">
-        © 2026 SUNRISE CONSULTANCY. ALL RIGHTS RESERVED.
-    </div>
-</footer>
-
-<a href="https://wa.me/919638039035" class="whatsapp-btn" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-<script>
-    AOS.init({ duration: 1000, once: true });
-</script>
-
-</body>
-</html>
+    <div style="text-align

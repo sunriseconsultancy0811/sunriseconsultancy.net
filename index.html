@@ -116,7 +116,7 @@
         .hero p { font-size: 19px; color: var(--slate); margin-bottom: 40px; }
         .hero-img img { width: 100%; border-radius: 30px; box-shadow: 0 30px 60px rgba(0,0,0,0.12); }
 
-        /* --- INDUSTRY GRID (Domestic) --- */
+        /* --- INDUSTRY GRID --- */
         .industry-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -191,6 +191,33 @@
         .jobs-container { background: #f1f5f9; padding: 60px 40px; border-radius: 40px; margin-top: 40px; }
         .job-item { display: flex; justify-content: space-between; align-items: center; padding: 25px 0; border-bottom: 1px solid rgba(0,0,0,0.05); }
 
+        /* --- REVIEWS SECTION --- */
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .review-card {
+            background: var(--white);
+            padding: 35px;
+            border-radius: 24px;
+            border: 1px solid rgba(0,0,0,0.05);
+            position: relative;
+            transition: 0.3s;
+        }
+
+        .review-card:hover {
+            box-shadow: 0 20px 40px rgba(15, 23, 42, 0.05);
+        }
+
+        .stars { color: #FFB800; margin-bottom: 15px; font-size: 14px; }
+        .review-text { font-size: 15px; color: var(--slate); font-style: italic; margin-bottom: 20px; }
+        .candidate-info strong { font-size: 16px; display: block; }
+        .candidate-info span { font-size: 12px; color: var(--accent); font-weight: 700; text-transform: uppercase; }
+        .google-icon { position: absolute; top: 35px; right: 35px; color: #4285F4; font-size: 20px; opacity: 0.2; }
+
         /* --- FOOTER --- */
         footer { background: #fff; padding: 100px 5% 40px; border-top: 1px solid #eee; }
         .footer-grid { max-width: 1200px; margin: auto; display: grid; grid-template-columns: 1fr 1fr 1.5fr; gap: 60px; }
@@ -220,6 +247,7 @@
             <a href="#expertise">Expertise</a>
             <a href="#global">Global</a>
             <a href="#jobs">Careers</a>
+            <a href="#reviews">Reviews</a>
             <a href="https://forms.gle/i6zmoPvZLHGTANzr7" class="btn btn-dark" style="padding: 10px 24px; margin-left: 20px; font-size: 13px;">Apply Now</a>
         </nav>
     </div>
@@ -353,6 +381,57 @@
     </div>
 </section>
 
+<section id="reviews" class="section-padding" style="background: #f1f5f9; border-radius: 60px; margin: 40px 20px;">
+    <div style="text-align: center;">
+        <span class="badge" data-aos="fade-up">Success Stories</span>
+        <h2 class="title-serif" data-aos="fade-up">Trusted by Top Talent</h2>
+    </div>
+
+    <div class="reviews-grid">
+        <div class="review-card" data-aos="fade-up">
+            <i class="fa-brands fa-google google-icon"></i>
+            <div class="stars">
+                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            </div>
+            <p class="review-text">"The recruitment process was seamless. Sunrise Consultancy helped me land a finance role in the UAE within 3 weeks. Highly professional team!"</p>
+            <div class="candidate-info">
+                <strong>Anjali Sharma</strong>
+                <span>Senior Accountant</span>
+            </div>
+        </div>
+
+        <div class="review-card" data-aos="fade-up" data-aos-delay="100">
+            <i class="fa-brands fa-google google-icon"></i>
+            <div class="stars">
+                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            </div>
+            <p class="review-text">"Excellent support for engineering roles. They understood my technical background perfectly and matched me with a great MNC."</p>
+            <div class="candidate-info">
+                <strong>Rahul Varma</strong>
+                <span>Project Engineer</span>
+            </div>
+        </div>
+
+        <div class="review-card" data-aos="fade-up" data-aos-delay="200">
+            <i class="fa-brands fa-google google-icon"></i>
+            <div class="stars">
+                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            </div>
+            <p class="review-text">"Best consultancy in Ahmedabad for international tax roles. Their guidance during the interview stages was invaluable."</p>
+            <div class="candidate-info">
+                <strong>Siddharth Shah</strong>
+                <span>Tax Analyst</span>
+            </div>
+        </div>
+    </div>
+    
+    <div style="text-align: center; margin-top: 40px;">
+        <a href="https://www.google.com/search?q=Sunrise+Consultancy+Ahmedabad&lrd=0x395e848aba5bd449:0x4648293020521ad,1" target="_blank" style="color: var(--slate); font-size: 13px; text-decoration: none; font-weight: 600;">
+            View more reviews on <span style="color: #4285F4;">G</span><span style="color: #EA4335;">o</span><span style="color: #FBBC05;">o</span><span style="color: #4285F4;">g</span><span style="color: #34A853;">l</span><span style="color: #EA4335;">e</span>
+        </a>
+    </div>
+</section>
+
 <footer id="contact">
     <div class="footer-grid">
         <div class="footer-col">
@@ -368,7 +447,7 @@
         </div>
         <div class="footer-col">
             <h4 style="margin-bottom: 20px;">Contact Details</h4>
-            <a href="https://maps.app.goo.gl/4i1dMfUndYRKCzDQA" target="_blank" class="contact-link">
+            <a href="https://maps.app.goo.gl/9R4j5jXfP3P6B8B7A" target="_blank" class="contact-link">
                 <i class="fa-solid fa-location-dot"></i>
                 <span>A 424, Sun Westbank, near vallabh sadan riverfront,<br>opp. city gold cinema, ashram road,<br>ahmedabad - 380009 Gujarat</span>
             </a>

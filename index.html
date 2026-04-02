@@ -7,6 +7,7 @@
     
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
     <style>
         :root {
@@ -16,9 +17,7 @@
             --slate: #64748B;
             --light-bg: #F8FAFC;
             --white: #FFFFFF;
-            --glass: rgba(255, 255, 255, 0.7);
-            --shadow-sm: 0 4px 6px -1px rgb(0 0 0 / 0.1);
-            --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1);
+            --glass: rgba(255, 255, 255, 0.9);
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -28,74 +27,80 @@
             font-family: 'Plus Jakarta Sans', sans-serif;
             background: var(--light-bg);
             color: var(--dark);
-            overflow-x: hidden;
+            line-height: 1.6;
         }
 
-        /* --- NAVIGATION --- */
+        /* --- FIXED NAVIGATION --- */
         header {
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
             background: var(--glass);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border-bottom: 1px solid rgba(0,0,0,0.05);
-            transition: 0.3s ease;
+            backdrop-filter: blur(15px);
+            border-bottom: 1px solid rgba(0,0,0,0.08);
         }
 
         .nav-container {
-            max-width: 1300px;
+            max-width: 1200px;
             margin: auto;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px 40px;
+            padding: 15px 25px;
         }
 
-        .logo {
-            font-weight: 800;
-            font-size: 22px;
-            letter-spacing: -1px;
-            color: var(--dark);
+        .logo-box {
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 12px;
+            text-decoration: none;
         }
+
+        .logo-box img {
+            height: 45px; /* Adjust based on your logo shape */
+            width: auto;
+            display: block;
+        }
+
+        .logo-text {
+            font-weight: 800;
+            font-size: 20px;
+            color: var(--dark);
+            letter-spacing: -0.5px;
+        }
+
+        nav { display: flex; align-items: center; }
 
         nav a {
             text-decoration: none;
             color: var(--dark);
             font-weight: 600;
             font-size: 14px;
-            margin-left: 35px;
+            margin-left: 30px;
             transition: 0.3s;
-            opacity: 0.7;
         }
 
-        nav a:hover { opacity: 1; color: var(--accent); }
+        nav a:hover { color: var(--accent); }
 
         /* --- HERO SECTION --- */
         .hero {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            padding: 140px 5% 80px;
-            max-width: 1400px;
+            max-width: 1200px;
             margin: auto;
-            gap: 60px;
+            padding: 160px 25px 80px;
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 50px;
+            align-items: center;
         }
-
-        .hero-content { flex: 1.2; }
 
         .badge {
             background: var(--accent-soft);
             color: var(--accent);
-            padding: 8px 16px;
+            padding: 6px 14px;
             border-radius: 100px;
-            font-size: 12px;
+            font-size: 11px;
             font-weight: 800;
-            text-transform: uppercase;
             letter-spacing: 1px;
             display: inline-block;
             margin-bottom: 20px;
@@ -103,37 +108,258 @@
 
         .hero h1 {
             font-family: 'Playfair Display', serif;
-            font-size: clamp(40px, 6vw, 72px);
+            font-size: clamp(38px, 5vw, 64px);
             line-height: 1.1;
-            margin-bottom: 25px;
+            margin-bottom: 20px;
         }
 
         .hero p {
             font-size: 18px;
             color: var(--slate);
-            max-width: 550px;
-            line-height: 1.7;
-            margin-bottom: 40px;
+            margin-bottom: 35px;
         }
 
-        .cta-group { display: flex; gap: 20px; }
+        .btn-group { display: flex; gap: 15px; }
 
         .btn {
-            padding: 18px 36px;
-            border-radius: 14px;
+            padding: 16px 30px;
+            border-radius: 12px;
             text-decoration: none;
             font-weight: 700;
-            font-size: 15px;
-            transition: 0.4s cubic-bezier(0.2, 1, 0.3, 1);
+            display: inline-block;
+            transition: 0.3s;
         }
 
-        .btn-main {
+        .btn-dark { background: var(--dark); color: white; }
+        .btn-dark:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
+
+        .hero-img img {
+            width: 100%;
+            border-radius: 24px;
+            box-shadow: var(--shadow-xl);
+        }
+
+        /* --- SERVICES --- */
+        .section-padding { padding: 100px 25px; max-width: 1200px; margin: auto; }
+        .center-title { text-align: center; margin-bottom: 60px; }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .card {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            border: 1px solid #edf2f7;
+            transition: 0.3s;
+        }
+
+        .card:hover { border-color: var(--accent); transform: translateY(-5px); }
+
+        /* --- JOBS --- */
+        .jobs-dark {
             background: var(--dark);
             color: white;
-            box-shadow: 0 10px 30px rgba(15, 23, 42, 0.2);
+            padding: 80px 40px;
+            border-radius: 40px;
+            margin: 20px;
         }
 
-        .btn-outline {
-            border: 2px solid var(--dark);
-            color: var(--dark);
+        .job-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 25px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
         }
+
+        /* --- FOOTER (CONTACT FIX) --- */
+        footer {
+            background: #fff;
+            padding: 80px 25px 40px;
+            border-top: 1px solid #eee;
+        }
+
+        .footer-grid {
+            max-width: 1200px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1.5fr;
+            gap: 60px;
+        }
+
+        .footer-logo { margin-bottom: 20px; }
+        .footer-col h4 { margin-bottom: 25px; font-size: 14px; text-transform: uppercase; letter-spacing: 1px; }
+        
+        .contact-link {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            color: var(--slate);
+            margin-bottom: 15px;
+            transition: 0.2s;
+        }
+
+        .contact-link i {
+            color: var(--accent);
+            width: 20px;
+            font-size: 18px;
+        }
+
+        .contact-link:hover { color: var(--dark); }
+
+        .whatsapp-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #25D366;
+            width: 60px; height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 30px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            z-index: 1000;
+        }
+
+        @media (max-width: 850px) {
+            .hero { grid-template-columns: 1fr; text-align: center; padding-top: 120px; }
+            .btn-group { justify-content: center; }
+            .footer-grid { grid-template-columns: 1fr; gap: 40px; }
+            nav { display: none; }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <div class="nav-container">
+        <a href="#" class="logo-box">
+            <img src="logo.png" alt="Sunrise Logo">
+            <span class="logo-text">SUNRISE</span>
+        </a>
+        <nav>
+            <a href="#">Home</a>
+            <a href="#services">Services</a>
+            <a href="#jobs">Jobs</a>
+            <a href="#contact" class="btn btn-dark" style="padding: 10px 20px; margin-left: 20px; font-size: 13px;">Contact</a>
+        </nav>
+    </div>
+</header>
+
+<section class="hero">
+    <div class="hero-content" data-aos="fade-right">
+        <span class="badge">GLOBAL RECRUITMENT PARTNER</span>
+        <h1>Building High-Performing <span style="color:var(--accent)">Teams.</span></h1>
+        <p>Premium talent solutions for UAE, UK, USA, and India. We connect industry leaders with exceptional professionals.</p>
+        <div class="btn-group">
+            <a href="https://forms.gle/i6zmoPvZLHGTANzr7" class="btn btn-dark">Hire Talent</a>
+            <a href="https://forms.gle/i6zmoPvZLHGTANzr7" class="btn" style="border: 1px solid #ddd;">Submit CV</a>
+        </div>
+    </div>
+    <div class="hero-img" data-aos="fade-left">
+        <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800" alt="Consultancy">
+    </div>
+</section>
+
+<section id="services" class="section-padding">
+    <div class="center-title">
+        <span class="badge">SPECIALIZATIONS</span>
+        <h2 style="font-size: 36px; margin-top: 10px;">Our Expertise</h2>
+    </div>
+    <div class="services-grid">
+        <div class="card" data-aos="fade-up">
+            <h3>Executive Search</h3>
+            <p>Direct headhunting for leadership roles and specialized technical positions.</p>
+        </div>
+        <div class="card" data-aos="fade-up" data-aos-delay="100">
+            <h3>Global Mobility</h3>
+            <p>Seamless international hiring support for UAE, UK, and USA markets.</p>
+        </div>
+        <div class="card" data-aos="fade-up" data-aos-delay="200">
+            <h3>HR Solutions</h3>
+            <p>Comprehensive manpower planning and outsourced staffing services.</p>
+        </div>
+    </div>
+</section>
+
+<section id="jobs" class="jobs-dark" data-aos="zoom-in">
+    <h2 style="margin-bottom: 40px; font-size: 32px;">Open Mandates</h2>
+    <div class="job-item">
+        <div>
+            <h4>US Accounting & Taxation</h4>
+            <p style="opacity: 0.6; font-size: 14px;">3+ Years Experience • International Client</p>
+        </div>
+        <a href="https://forms.gle/i6zmoPvZLHGTANzr7" class="btn btn-dark" style="background: var(--accent); font-size: 12px; padding: 10px 20px;">Apply</a>
+    </div>
+    <div class="job-item">
+        <div>
+            <h4>Corporate Accountant</h4>
+            <p style="opacity: 0.6; font-size: 14px;">2+ Years Experience • Local & Remote</p>
+        </div>
+        <a href="https://forms.gle/i6zmoPvZLHGTANzr7" class="btn btn-dark" style="background: var(--accent); font-size: 12px; padding: 10px 20px;">Apply</a>
+    </div>
+</section>
+
+<section class="section-padding">
+    <div class="center-title">
+        <h2>Submit Your Details</h2>
+    </div>
+    <div style="border-radius: 30px; overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.05);">
+        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdC78-KVHKo6jrD704b5clwaoNSMl7gMqixYjnPukhWjF39sQ/viewform?embedded=true" width="100%" height="800" frameborder="0">Loading…</iframe>
+    </div>
+</section>
+
+<footer id="contact">
+    <div class="footer-grid">
+        <div class="footer-col">
+            <div class="logo-box footer-logo">
+                <img src="logo.png" alt="Sunrise Logo">
+                <span class="logo-text">SUNRISE</span>
+            </div>
+            <p style="font-size: 14px; color: var(--slate);">Your strategic partner in global talent acquisition across borders.</p>
+        </div>
+        
+        <div class="footer-col">
+            <h4>Sitemap</h4>
+            <a href="#" class="contact-link" style="gap:0">Home</a>
+            <a href="#services" class="contact-link" style="gap:0">Services</a>
+            <a href="#jobs" class="contact-link" style="gap:0">Careers</a>
+        </div>
+
+        <div class="footer-col">
+            <h4>Contact Details</h4>
+            <a href="tel:+919638039035" class="contact-link">
+                <i class="fa-solid fa-phone"></i> +91 9638039035
+            </a>
+            <a href="mailto:sunriseconsultancy.hr@gmail.com" class="contact-link">
+                <i class="fa-solid fa-envelope"></i> sunriseconsultancy.hr@gmail.com
+            </a>
+            <a href="https://www.linkedin.com/company/sunrise-consultancy-0811/" target="_blank" class="contact-link">
+                <i class="fa-brands fa-linkedin"></i> LinkedIn Profile
+            </a>
+        </div>
+    </div>
+    <div style="text-align: center; margin-top: 60px; padding-top: 30px; border-top: 1px solid #eee; font-size: 12px; color: #999;">
+        © 2026 SUNRISE CONSULTANCY. ALL RIGHTS RESERVED.
+    </div>
+</footer>
+
+<a href="https://wa.me/919638039035" class="whatsapp-btn" target="_blank">
+    <i class="fa-brands fa-whatsapp"></i>
+</a>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script>
+    AOS.init({ duration: 1000, once: true });
+</script>
+
+</body>
+</html>
